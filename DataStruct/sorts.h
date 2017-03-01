@@ -40,3 +40,26 @@ void InsertSort(T a[], int n)   /* 对T a[n]进行插入排序 */
 		a[j] = temp;
 	}
 }
+
+template <typename T>
+void BubbleSort(T a[], int n)   /* 对T a[n]进行冒泡排序 */
+{
+	int i = n - 1;
+	int last;
+	int temp;
+	while (i > 0)
+	{
+		last = 0;
+		for (int j = 0; j < i; ++j)
+		{
+			if (a[j + 1] < a[j])
+			{
+				temp = a[j + 1];
+				a[j + 1] = a[j];
+				a[j] = temp;
+				last = j;
+			}
+		}
+		i = last;
+	}
+}

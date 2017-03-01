@@ -25,3 +25,16 @@ int main()
 	std::cout << std::endl;
 }
 #endif // InsertSortMain
+
+#ifdef BubbleSortMain
+
+int main()
+{
+	int a[] = { 1, -2, -4, 43, -1 };
+	BubbleSort(a, sizeof(a) / sizeof(int));
+	for (int i = 0; i < sizeof(a) / sizeof(int); ++i)
+		std::cout << a[i] << " ";
+	std::cout << std::endl;
+}
+
+#endif //BubbleSortMain 
