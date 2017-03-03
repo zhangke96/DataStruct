@@ -79,3 +79,24 @@ int main()
 }
 
 #endif //ShellSortMain
+
+#ifdef MergeSortMain
+
+int main()
+{
+	std::default_random_engine randomengine;
+	int b[100000];
+	for (int i = 0; i < 100000; ++i)
+	{
+		b[i] = randomengine();
+	}
+	clock_t end;
+	clock_t beg = clock();
+	MergeSort(b, (sizeof(b) / sizeof(int)));
+	assert(isSorted(b, sizeof(b) / sizeof(int)));
+	end = clock();
+	std::cout << end - beg << std::endl;
+	return 0;
+}
+
+#endif //MergeSortMain

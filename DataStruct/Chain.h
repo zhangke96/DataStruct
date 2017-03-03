@@ -108,7 +108,7 @@ public:
 			now = first->link;
 			--k;
 		}
-		if (k == 2)  /* 存在第k-1个元素，改变第k-1的link */
+		if (k == 2)  /* 存在第k-1个元素,改变第k-1的link */
 		{
 			ChainNode<T> *temp = now->link;
 			if (temp != nullptr)
@@ -118,10 +118,10 @@ public:
 				delete temp;
 				return *this;
 			}
-			else      /* 只存在第k-1个，不存在第k个 */
+			else      /* 只存在第k-1个,不存在第k个 */
 				return *this;
 		}
-		else        /* 不存在，删除失败 */
+		else        /* 不存在,删除失败 */
 			return *this;
 	}
 	Chain<T>& Insert(int k, const T& x)  /* 在第k个元素之后插入x */

@@ -84,7 +84,7 @@ void ShellSort(T a[], int n)   /* 对T a[n]进行希尔排序 */
 					a[k] = a[k - h];
 					k -= h;
 				}
-				assert(k < n);
+			//	assert(k < n);
 				a[k] = temp;
 			}
 		}
@@ -123,4 +123,45 @@ bool isSorted(T a[], int n)
 			return false;
 	}
 	return true;
+}
+
+template <typename T>              /* 利用辅助数组aux对T[lo] -- T[mid] 和 T[mid+1] -- T[hi]进行归并操作 */
+void merge(T a[], T aux[], int lo, int mid, int hi)
+{
+	int i = lo, j = mid + 1;       /* 分成两段的数组的下标 */
+
+	for (int k = lo; k <= hi; ++k) /* 将数组先复制到辅助数组中 */
+		aux[k] = a[k];
+
+	for (int k = lo; k <= hi; ++k) /* 开始归并操作 */
+	{
+		if (i > mid)   /* 前面一段数组元素全部用完 */
+			a[k] = aux[j++];
+		else if (j > hi)  /* 后面一段数组元素全部用完 */
+			a[k] = aux[i++];
+		else if (aux[i] < aux[j])  /* 前面的比后面小，放前面的 */
+			a[k] = aux[i++];
+		else
+			a[k] = aux[j++];
+	}
+}
+
+template <typename T>
+void MergeSort(T a[], T aux[], int lo, int hi)
+{
+	if (hi <= lo)
+		return;
+	int mid = lo + (hi - lo) / 2;    /* ==(hi + lo) / 2 预防溢出 */
+	MergeSort(a, aux, lo, mid);
+	MergeSort(a, aux, mid + 1, hi);
+	merge(a, aux, lo, mid, hi);
+}
+
+template <typename T>
+void MergeSort(T a[], int n)
+{
+	T *aux;
+	aux = new T[n];
+	MergeSort(a, aux, 0, n - 1);
+	delete[] aux;
 }

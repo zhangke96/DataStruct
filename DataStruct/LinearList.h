@@ -80,7 +80,7 @@ public:
 			return *this;
 		}
 		/* 无需扩大内存分配 */
-		/* 先向后移除位置，然后插入 */
+		/* 先向后移除位置,然后插入 */
 		for (int i = length - 1; i >= k; --i)
 		{
 			element[i + 1] = element[i];
