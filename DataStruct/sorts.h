@@ -165,3 +165,21 @@ void MergeSort(T a[], int n)
 	MergeSort(a, aux, 0, n - 1);
 	delete[] aux;
 }
+
+template <typename T>
+/* 不使用递归，自底向上的归并排序 
+*  将数组分为2个元素归并排序，4个元素归并排序，直至全部
+*/
+void AMergeSort(T a[], int n)
+{
+	T *aux;
+	aux = new T[n];
+	for (int sz = 1; sz < n; sz = 2 * sz)    /* 归并的两个数组的大小，从1开始增长直至2个归并的数组可以覆盖整个数组 */
+	{
+		for (int lo = 0; lo < n - sz; lo += 2 * sz)
+		{
+			int hi = (lo + 2 * sz - 1) < n - 1 ? lo + 2 * sz - 1 : n - 1;
+			merge(a, aux, lo, lo + sz - 1, hi);
+		}
+	}
+}

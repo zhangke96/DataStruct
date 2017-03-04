@@ -41,19 +41,19 @@ int main()
 }
 
 #endif //BubbleSortMain 
-
+#define SIZE 100000
 #ifdef ShellSortMain
 
 int main()
 {
 	std::default_random_engine randomengine;
-	int b[100000];
-	for (int i = 0; i < 100000; ++i)
+	int b[SIZE];
+	for (int i = 0; i < SIZE; ++i)
 	{
 		b[i] = randomengine();
 	}
-	int c[100000];
-	for (int i = 0; i < 100000; ++i)
+	int c[SIZE];
+	for (int i = 0; i < SIZE; ++i)
 	{
 		c[i] = b[i];
 	}
@@ -85,14 +85,14 @@ int main()
 int main()
 {
 	std::default_random_engine randomengine;
-	int b[100000];
-	for (int i = 0; i < 100000; ++i)
+	int b[SIZE];
+	for (int i = 0; i < SIZE; ++i)
 	{
 		b[i] = randomengine();
 	}
 	clock_t end;
 	clock_t beg = clock();
-	MergeSort(b, (sizeof(b) / sizeof(int)));
+	AMergeSort(b, (sizeof(b) / sizeof(int)));
 	assert(isSorted(b, sizeof(b) / sizeof(int)));
 	end = clock();
 	std::cout << end - beg << std::endl;
