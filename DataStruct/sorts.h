@@ -208,8 +208,8 @@ int partition(T a[], int lo, int hi)  /* ¿ìËÙÅÅĞòÖĞµÄÇĞ·Öº¯Êı£¬½«a[lo] -- a[hi]Ò
 	/* ½»»»»ù×¼ºÍjÏÂ±êµÄÖµ */
 	temp = a[lo];
 	a[lo] = a[j];
-	a[j] = a[lo];
-	reutrn j;               /* ÏÖÔÚ½«Õâ¸öÊı×éÒ»²¿·Ö·Ö³ÉÁËa[lo] -- a[j-1] <= a[j] <= a[j+1] -- a[hi]*/
+	a[j] = temp;
+	return j;               /* ÏÖÔÚ½«Õâ¸öÊı×éÒ»²¿·Ö·Ö³ÉÁËa[lo] -- a[j-1] <= a[j] <= a[j+1] -- a[hi]*/
 }
 
 template <typename T>

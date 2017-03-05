@@ -113,7 +113,7 @@ int main()
 	}
 	clock_t end;
 	clock_t beg = clock();
-	AMergeSort(a, (sizeof(a) / sizeof(int)));
+	QuickSort(a, (sizeof(a) / sizeof(int)));
 	end = clock();
 	assert(isSorted(a, sizeof(a) / sizeof(int)));
 	std::cout << end - beg << std::endl;
