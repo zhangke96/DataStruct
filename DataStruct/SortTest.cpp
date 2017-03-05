@@ -93,10 +93,30 @@ int main()
 	clock_t end;
 	clock_t beg = clock();
 	AMergeSort(b, (sizeof(b) / sizeof(int)));
-	assert(isSorted(b, sizeof(b) / sizeof(int)));
 	end = clock();
+	assert(isSorted(b, sizeof(b) / sizeof(int)));
 	std::cout << end - beg << std::endl;
 	return 0;
 }
 
 #endif //MergeSortMain
+
+#ifdef QuickSortMain
+
+int main()
+{
+	std::default_random_engine randomengine;
+	int a[SIZE];
+	for (int i = 0; i < SIZE; ++i)
+	{
+		a[i] = randomengine();
+	}
+	clock_t end;
+	clock_t beg = clock();
+	AMergeSort(a, (sizeof(a) / sizeof(int)));
+	end = clock();
+	assert(isSorted(a, sizeof(a) / sizeof(int)));
+	std::cout << end - beg << std::endl;
+	return 0;
+}
+#endif // QuickSortMain

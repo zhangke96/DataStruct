@@ -183,3 +183,46 @@ void AMergeSort(T a[], int n)
 		}
 	}
 }
+
+template <typename T>
+int partition(T a[], int lo, int hi)  /* 快速排序中的切分函数，将a[lo] -- a[hi]已lo为基准进行切分，切分为两个子数组，前一个的所有值都小于等于a[lo]，返回最后a[lo]所在下标 */
+{
+	int i = lo;
+	int j = hi + 1;
+	T standard = a[lo];    /* 将待切分数组第一个元素作为基准 */
+	T temp;
+	while (true)
+	{
+		while (a[++i] < standard)  /* 当i下标的值比基准小，一直向后 */
+			if (i == hi)
+				break;
+		while (a[--j] > standard)  /* 当j下标的值比基准大，一直向前 */
+			if (j == lo)
+				break;
+		if (i >= j)             /* 当两个下标交互了，退出 */
+			break;
+		temp = a[i];              /* 交换两个下标的值 */
+		a[i] = a[j];
+		a[j] = temp;
+	}
+	/* 交换基准和j下标的值 */
+	temp = a[lo];
+	a[lo] = a[j];
+	a[j] = a[lo];
+	reutrn j;               /* 现在将这个数组一部分分成了a[lo] -- a[j-1] <= a[j] <= a[j+1] -- a[hi]*/
+}
+
+template <typename T>
+void QuickSort(T a[], int lo, int hi)    /* 对a[lo] -- a[hi] 快速排序 */
+{
+	if (lo >= hi)
+		return;
+	int j = partition(a, lo, hi);
+	QuickSort(a, lo, j - 1);
+	QuickSort(a, j + 1, hi);
+}
+template <typename T>
+void QuickSort(T a[], int n)  /* 对T a[n] 进行快速排序 */
+{
+	QuickSort(a, 0, n - 1);    /* n-1 是因为下标是要可以访问的最大 */
+}
