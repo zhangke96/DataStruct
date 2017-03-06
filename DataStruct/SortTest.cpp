@@ -1,7 +1,8 @@
-#include "sorts.h"
+#include <iostream>
 #include <random>
 #include <cassert>
 #include <ctime>
+#include "sorts.h"
 
 #ifdef SelectSortMain
 
@@ -41,18 +42,19 @@ int main()
 }
 
 #endif //BubbleSortMain 
-#define SIZE 100000
+#define SIZE 1000000000
 #ifdef ShellSortMain
 
 int main()
 {
 	std::default_random_engine randomengine;
-	int b[SIZE];
+	int *b;
+	b = new int[SIZE];
 	for (int i = 0; i < SIZE; ++i)
 	{
 		b[i] = randomengine();
 	}
-	int c[SIZE];
+	int *c = new int[SIZE];
 	for (int i = 0; i < SIZE; ++i)
 	{
 		c[i] = b[i];
@@ -85,13 +87,17 @@ int main()
 int main()
 {
 	std::default_random_engine randomengine;
-	int b[SIZE];
+	int *b = new int[SIZE];
+	clock_t beg = clock();
 	for (int i = 0; i < SIZE; ++i)
 	{
 		b[i] = randomengine();
 	}
+	/*for (int i = 0; i < 10; ++i)
+		std::cout << b[i] << " ";
+	std::cout << std::endl;*/
 	clock_t end;
-	clock_t beg = clock();
+
 	AMergeSort(b, (sizeof(b) / sizeof(int)));
 	end = clock();
 	assert(isSorted(b, sizeof(b) / sizeof(int)));
@@ -106,13 +112,13 @@ int main()
 int main()
 {
 	std::default_random_engine randomengine;
-	int a[SIZE];
+	int *a = new int[SIZE];
+	clock_t beg = clock();
 	for (int i = 0; i < SIZE; ++i)
 	{
 		a[i] = randomengine();
 	}
 	clock_t end;
-	clock_t beg = clock();
 	QuickSort(a, (sizeof(a) / sizeof(int)));
 	end = clock();
 	assert(isSorted(a, sizeof(a) / sizeof(int)));
