@@ -42,7 +42,7 @@ int main()
 }
 
 #endif //BubbleSortMain 
-#define SIZE 1000000000
+#define SIZE 10000000
 #ifdef ShellSortMain
 
 int main()
@@ -113,6 +113,7 @@ int main()
 {
 	std::default_random_engine randomengine;
 	int *a = new int[SIZE];
+	std::cout << _msize(a) << std::endl;
 	clock_t beg = clock();
 	for (int i = 0; i < SIZE; ++i)
 	{

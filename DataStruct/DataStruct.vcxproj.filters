@@ -27,6 +27,9 @@
     <ClInclude Include="sorts.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryTreeNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinearList.cpp">

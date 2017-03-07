@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryTreeNode.h" />
     <ClInclude Include="Chain.h" />
     <ClInclude Include="DoubleChain.h" />
     <ClInclude Include="LinearList.h" />
