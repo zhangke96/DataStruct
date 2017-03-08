@@ -1,6 +1,8 @@
 #include <iostream>
+#include <vector>
+
 template <typename T>
-class BinaryTreeNode<T>;
+class BinaryTreeNode;
 template <typename T>
 void Visit(BinaryTreeNode<T> *);
 template <typename T>
@@ -66,5 +68,21 @@ void PostOrder(BinaryTreeNode<T> *t)   /* 后序遍历，左、右、根 */
 template <typename T>
 void LevelOrder(BinaryTreeNode<T> *t)  /* 层次遍历 */
 {
-
+	std::vector<BinaryTreeNode<T> *> vec;
+	vec.push_back(t);
+	int cur = 0, last = 1;
+	while (cur < vec.size())
+	{
+		last = vec.size();
+		while (cur < last)
+		{
+			std::cout << vec[cur]->data << " ";
+			if (vec[cur]->LeftChild)
+				vec.push_back(vec[cur]->LeftChild);
+			if (vec[cur]->RightChild)
+				vec.push_back(vec[cur]->RightChild);
+			++cur;
+		}
+		std::cout << std::endl;
+	}
 }
