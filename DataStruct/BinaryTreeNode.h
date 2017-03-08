@@ -16,11 +16,11 @@ void LevelOrder(BinaryTreeNode<T> *);
 template <typename T>
 class BinaryTreeNode
 {
-	friend void Visit(BinaryTreeNode<T> *);
-	friend void InOrder(BinaryTreeNode<T> *);
-	friend void PreOrder(BinaryTreeNode<T> *);
-	friend void PostOrder(BinaryTreeNode<T> *);
-	friend void LevelOrder(BinaryTreeNode<T> *);
+	friend void Visit<T>(BinaryTreeNode<T> *);
+	friend void InOrder<T>(BinaryTreeNode<T> *);
+	friend void PreOrder<T>(BinaryTreeNode<T> *);
+	friend void PostOrder<T>(BinaryTreeNode<T> *);
+	friend void LevelOrder<T>(BinaryTreeNode<T> *);
 public:
 	BinaryTreeNode() : LeftChild(NULL), RightChild(NULL) {}
 	BinaryTreeNode(const T &e) : data(e), LeftChild(NULL), RightChild(NULL) {}

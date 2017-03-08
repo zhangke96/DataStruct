@@ -9,8 +9,8 @@ int main()
 	BinaryTreeNode<int> c(3);
 	int A = 1;
 	BinaryTreeNode<int> a(A, &b, &c);
-	Visit(&a);
-	//PreOrder(&a);
+	//Visit(&a);
+	PreOrder(&a);
 }
 
 #endif  //BinaryTreeMain
