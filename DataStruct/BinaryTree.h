@@ -1,3 +1,8 @@
+#ifndef BINARYTREE
+
+#define BINARYTREE
+
+
 #include <iostream>
 #include "BinaryTreeNode.h"
 
@@ -97,3 +102,5 @@ private:
 		std::cout << t->getData() << " ";
 	}
 };
+
+#endif // !BINARYTREE

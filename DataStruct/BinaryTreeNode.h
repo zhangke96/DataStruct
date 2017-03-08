@@ -1,3 +1,8 @@
+#ifndef BINARYTREENODE
+
+#define BINARYTREENODE
+
+
 #include <iostream>
 #include <vector>
 
@@ -98,3 +103,5 @@ void LevelOrder(BinaryTreeNode<T> *t)  /* ²ã´Î±éÀú */
 		std::cout << std::endl;
 	}
 }
+
+#endif // !BINARYTREENODE

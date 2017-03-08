@@ -37,7 +37,7 @@ int main()
 	BinaryTree<char> C('C', K, null);
 	BinaryTree<char> B('B', null, C);
 	BinaryTree<char> A('A', D, B);
-	A.PostOrder();
+	A.PreOrder();
 	
 
 }
