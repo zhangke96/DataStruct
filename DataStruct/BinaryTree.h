@@ -56,44 +56,44 @@ public:
 	{
 		if (!root)
 			return;
-		PreOrder(root);
+		PreOrderBT(root);
 	}
 	void InOrder() const
 	{
 		if (!root)
 			return;
-		InOrder(root);
+		InOrderBT(root);
 	}
 	void PostOrder() const
 	{
 		if (!root)
 			return;
-		PostOrder(order);
+		PostOrderBT(root);
 	}
 private:
 	BinaryTreeNode<T> *root;
-	void PreOrder(const BinaryTreeNode<T> *t) const
+	void PreOrderBT(const BinaryTreeNode<T> *t) const
 	{
 		if (!t)
 			return;
 		std::cout << t->getData() << " ";
-		PreOrder(t->LeftChild);
-		PreOrder(t->RightChild);
+		PreOrderBT(t->getLeftPoint());
+		PreOrderBT(t->getRightPoint());
 	}
-	void InOrder(const BinaryTreeNode<T> *t) const
+	void InOrderBT(const BinaryTreeNode<T> *t) const
 	{
 		if (!t)
 			return;
-		InOrder(t->LeftChild);
+		InOrderBT(t->getLeftPoint());
 		std::cout << t->getData() << " ";
-		InOrder(t->RightChild);
+		InOrderBT(t->getRightPoint());
 	}
-	void PostOrder(const BinaryTreeNode<T> *t) const
+	void PostOrderBT(const BinaryTreeNode<T> *t) const
 	{
 		if (!t)
 			return;
-		PostOrder(t->LeftChild);
-		PostOrder(t->RightChild);
+		PostOrderBT(t->getLeftPoint());
+		PostOrderBT(t->getRightPoint());
 		std::cout << t->getData() << " ";
 	}
 };
