@@ -25,6 +25,10 @@ public:
 	BinaryTreeNode() : LeftChild(NULL), RightChild(NULL) {}
 	BinaryTreeNode(const T &e) : data(e), LeftChild(NULL), RightChild(NULL) {}
 	BinaryTreeNode(const T &e, BinaryTreeNode *lh, BinaryTreeNode *rh) : data(e), LeftChild(lh), RightChild(rh) {}
+	T getData() const
+	{
+		return data;
+	}
 private:
 	T data;
 	BinaryTreeNode<T> *LeftChild, *RightChild;
