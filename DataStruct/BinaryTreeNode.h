@@ -30,11 +30,11 @@ public:
 	BinaryTreeNode() : LeftChild(NULL), RightChild(NULL) {}
 	BinaryTreeNode(const T &e) : data(e), LeftChild(NULL), RightChild(NULL) {}
 	BinaryTreeNode(const T &e, BinaryTreeNode *lh, BinaryTreeNode *rh) : data(e), LeftChild(lh), RightChild(rh) {}
-	const BinaryTreeNode<T> *const getLeftPoint() const
+	const BinaryTreeNode<T> * getLeftPoint() const
 	{
 		return LeftChild;
 	}
-	const BinaryTreeNode<T> *const getRightPoint() const
+	const BinaryTreeNode<T> * getRightPoint() const
 	{
 		return RightChild;
 	}

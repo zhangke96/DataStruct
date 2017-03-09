@@ -38,8 +38,17 @@ int main()
 	BinaryTree<char> B('B', null, C);
 	BinaryTree<char> A('A', D, B);
 	A.PreOrder();
-	
-
+	std::cout << std::endl;
+	A.InOrder();
+	std::cout << std::endl;
+	A.PostOrder();
+	std::cout << std::endl;
+	A.StackPreOrder();
+	std::cout << std::endl;
+	A.StackInOrder();
+	std::cout << std::endl;
+	A.StackPostOrder();
+	std::cout << std::endl;
 }
 
 #endif  //ABinaryTreeMain
