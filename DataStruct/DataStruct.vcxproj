@@ -104,7 +104,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalOptions>-D "ABinaryTreeMain" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/D "MaxPQMain" %(AdditionalOptions)</AdditionalOptions>
       <BufferSecurityCheck>true</BufferSecurityCheck>
     </ClCompile>
     <Link>
@@ -155,12 +155,14 @@
     <ClInclude Include="Chain.h" />
     <ClInclude Include="DoubleChain.h" />
     <ClInclude Include="LinearList.h" />
+    <ClInclude Include="MaxPQ.h" />
     <ClInclude Include="sorts.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Chain.cpp" />
     <ClCompile Include="LinearList.cpp" />
+    <ClCompile Include="MaxPQTest.cpp" />
     <ClCompile Include="SortTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

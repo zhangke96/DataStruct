@@ -33,6 +33,9 @@
     <ClInclude Include="BinaryTree.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="MaxPQ.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinearList.cpp">
@@ -45,6 +48,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="BinaryTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MaxPQTest.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
